@@ -1,0 +1,7 @@
+com\telezone\pojo\IPUser.class
+com\telezone\constant\JqGridPage.class
+com\telezone\constant\ResultEnum.class
+com\telezone\constant\PageParam.class
+com\telezone\constant\Resource.class
+com\telezone\constant\ResultModel.class
+META-INF\spring-configuration-metadata.json
