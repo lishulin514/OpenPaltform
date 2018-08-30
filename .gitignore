@@ -34,6 +34,6 @@ gen
 *.project
 .svn/
 
-.idea/
+/.idea/
 
 /.gitignore
