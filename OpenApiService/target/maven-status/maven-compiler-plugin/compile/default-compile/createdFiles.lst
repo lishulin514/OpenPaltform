@@ -1,7 +1,0 @@
-com\telezone\user\task\DoTask.class
-com\telezone\user\task\AsyncTask.class
-com\telezone\user\dao\UserMapper.class
-com\telezone\user\service\UserService.class
-com\telezone\user\dao\UserMapperCustom.class
-com\telezone\user\service\impl\UserServiceImpl.class
-com\telezone\user\task\TestTask.class

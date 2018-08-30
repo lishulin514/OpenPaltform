@@ -1,5 +1,0 @@
-com\telezone\OpenApiApplication.class
-com\telezone\handler\WebExceptionHandler.class
-com\telezone\interceptor\TwoInterceptor.class
-com\telezone\interceptor\OneInterceptor.class
-com\telezone\config\WebMvcConfigurer.class
