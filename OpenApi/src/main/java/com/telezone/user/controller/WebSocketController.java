@@ -17,6 +17,6 @@ public class WebSocketController {
     @RequestMapping("/test")
     public String webSocketSend(HttpServletRequest request){
 
-        return null;
+        return "/websocket/chatReceive";
     }
 }

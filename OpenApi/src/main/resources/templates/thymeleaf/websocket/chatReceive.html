@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html;charset=urf-8"/>
     <title>Title</title>
+    <script th:src="@{/static/myScript/js/websocket/websocket.js}"></script>
 </head>
 <body>
-<div th:text="#{static.name}"></div>
-<div th:text="#{static.url}"></div>
+    <div th:text="#{static.name}"></div>
+    <div th:text="#{static.url}"></div>
+    <textarea id="responseContent" style="width:1024px;height: 500px;">
 
+    </textarea>
+<script>
+    WebSocketObj.init("ws://127.0.0.1:8888/websocket");
+</script>
 </body>
 </html>

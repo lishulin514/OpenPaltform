@@ -12,7 +12,7 @@ import tk.mybatis.spring.annotation.MapperScan;
  * @date： 2018/8/24 13:37
  */
 @SpringBootApplication
-@MapperScan("com.telezone.*.dao")
+@MapperScan("com.telezone.user.dao")
 //开启定时任务
 @EnableScheduling
 //开启异步调用方法
