@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 
 @Service
 public class IPUserServiceImpl implements IPUserService {
@@ -20,5 +22,11 @@ public class IPUserServiceImpl implements IPUserService {
     public IPUser getUserByUsername(String username) {
 
         return userRepository.findByUsername(username);
+    }
+
+    @Override
+    public List<IPUser> findByUsernameStartingWithAndTelephone(String Username, String telezone) {
+
+        return userRepository.findByUsernameStartingWithAndTelephone(Username, telezone);
     }
 }

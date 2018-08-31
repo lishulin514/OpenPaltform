@@ -10,4 +10,6 @@ public interface IPUserService {
 
     public IPUser getUserByUsername(String usernmae);
 
+    public List<IPUser> findByUsernameStartingWithAndTelephone(String Username, String telezone);
+
 }

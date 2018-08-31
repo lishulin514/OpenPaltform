@@ -1,8 +1,5 @@
 package com.telezone.interceptor;
 
-import com.telezone.common.JsonUtils;
-import com.telezone.constant.ResultEnum;
-import com.telezone.constant.ResultModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -10,9 +7,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
 
 
 public class TwoInterceptor implements HandlerInterceptor  {
@@ -26,7 +20,6 @@ public class TwoInterceptor implements HandlerInterceptor  {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object object) throws Exception {
 		
 		if (true) {
-			returnErrorResponse(response, ResultModel.error(ResultEnum.ERROR_500));
 		}
 		
 		System.out.println("被two拦截...");
@@ -52,20 +45,5 @@ public class TwoInterceptor implements HandlerInterceptor  {
 			throws Exception {
 		// TODO Auto-generated method stub
 		
-	}
-	
-	public void returnErrorResponse(HttpServletResponse response, ResultModel<?> result) throws IOException, UnsupportedEncodingException {
-		OutputStream out=null;
-		try{
-		    response.setCharacterEncoding("utf-8");
-		    response.setContentType("text/json");
-		    out = response.getOutputStream();
-		    out.write(JsonUtils.objectToJson(result).getBytes("utf-8"));
-		    out.flush();
-		} finally{
-		    if(out!=null){
-		        out.close();
-		    }
-		}
 	}
 }

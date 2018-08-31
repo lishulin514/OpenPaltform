@@ -4,6 +4,8 @@ import com.telezone.pojo.IPUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * @author： 李树林
  * @description：
@@ -13,4 +15,6 @@ import org.springframework.stereotype.Repository;
 public interface UserRepository extends JpaRepository<IPUser, String>{
 
     IPUser findByUsername(String username);
+
+    List<IPUser> findByUsernameStartingWithAndTelephone(String Username, String telezone);
 }

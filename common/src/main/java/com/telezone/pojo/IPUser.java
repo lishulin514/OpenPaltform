@@ -37,7 +37,7 @@ public class IPUser{
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @Column(name = "Telephone")
-    private Integer telephone;
+    private String telephone;
     /**
      * Data 打印格式
      */

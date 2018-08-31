@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * @author： 李树林
@@ -26,6 +27,8 @@ public class UserController {
     public String webSocketSend(HttpServletRequest request){
 
         IPUser lch = ipUserService.getUserByUsername("lch");
+        List<IPUser> admin = ipUserService.findByUsernameStartingWithAndTelephone("admin", "11");
+        System.out.println(JSON.toJSONString(admin));
         return JSON.toJSONString(lch);
     }
 }

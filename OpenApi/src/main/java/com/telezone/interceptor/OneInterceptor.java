@@ -1,15 +1,10 @@
 package com.telezone.interceptor;
 
-import com.telezone.common.JsonUtils;
-import com.telezone.constant.ResultModel;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
 
 public class OneInterceptor implements HandlerInterceptor  {
 
@@ -23,11 +18,6 @@ public class OneInterceptor implements HandlerInterceptor  {
 		System.out.println("被one拦截，放行...");
 		return true;
 		
-		/*if (true) {
-			returnErrorResponse(response, IMoocJSONResult.errorMsg("被one拦截..."));
-		}
-		
-		return false;*/
 	}
 	
 	/**
@@ -51,21 +41,5 @@ public class OneInterceptor implements HandlerInterceptor  {
 			throws Exception {
 		// TODO Auto-generated method stub
 		
-	}
-	
-	public void returnErrorResponse(HttpServletResponse response, ResultModel<?> result)
-			throws IOException, UnsupportedEncodingException {
-		OutputStream out=null;
-		try{
-		    response.setCharacterEncoding("utf-8");
-		    response.setContentType("text/json");
-		    out = response.getOutputStream();
-		    out.write(JsonUtils.objectToJson(result).getBytes("utf-8"));
-		    out.flush();
-		} finally{
-		    if(out!=null){
-		        out.close();
-		    }
-		}
 	}
 }
