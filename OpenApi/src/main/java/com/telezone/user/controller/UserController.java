@@ -1,9 +1,12 @@
 package com.telezone.user.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.telezone.pojo.IPUser;
 import com.telezone.user.service.IPUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -12,16 +15,17 @@ import javax.servlet.http.HttpServletRequest;
  * @description：
  * @date： 2018/8/24 17:52
  */
-@Controller
+@RestController
 @RequestMapping("user")
 public class UserController {
 
     @Autowired
     private IPUserService ipUserService;
 
-    @RequestMapping("/test/websocket")
+    @RequestMapping("/test")
     public String webSocketSend(HttpServletRequest request){
 
-        return null;
+        IPUser lch = ipUserService.getUserByUsername("lch");
+        return JSON.toJSONString(lch);
     }
 }

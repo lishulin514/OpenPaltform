@@ -1,4 +1,4 @@
-package com.telezone.user.task;
+package com.telezone.task;
 
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.AsyncResult;

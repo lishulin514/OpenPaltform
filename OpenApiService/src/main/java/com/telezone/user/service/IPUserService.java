@@ -8,11 +8,6 @@ import java.util.List;
 
 public interface IPUserService {
 
-    public IPUser getUserById(String id);
+    public IPUser getUserByUsername(String usernmae);
 
-    List<IPUser> getUserList(PageParam param, IPUser user);
-
-    void createUser(IPUser user);
-
-    void testTransactional(IPUser user);
 }

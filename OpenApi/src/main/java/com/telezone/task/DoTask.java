@@ -1,4 +1,4 @@
-package com.telezone.user.task;
+package com.telezone.task;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
