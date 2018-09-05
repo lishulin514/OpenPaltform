@@ -1,22 +1,19 @@
-package com.telezone.business.user.repository;
+package com.telezone.business.demo.repository;
 
-import com.telezone.business.user.pojo.IPUser;
+import com.telezone.business.demo.pojo.IPUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * @author： 李树林
  * @description：
- * @date： 2018/8/31 15:18
+ * @date： 2018/9/5 11:44
  */
-@Repository
-public interface UserRepository extends JpaRepository<IPUser, String>{
-
+public interface DemoRepository extends JpaRepository<IPUser, String> {
     IPUser findByUsername(String username);
 
     /**
@@ -31,7 +28,7 @@ public interface UserRepository extends JpaRepository<IPUser, String>{
     public List<IPUser> queryParams1(String username ,String password);
 
     @Query("select u from IPUser u where u.username =  :username and u.password = :password")
-    public List<IPUser> queryParams2(@Param("username") String username ,@Param("password") String password);
+    public List<IPUser> queryParams2(@Param("username") String username , @Param("password") String password);
 
     @Query("select u from IPUser u where u.username like %?1%")
     public List<IPUser> queryLike1(String username);

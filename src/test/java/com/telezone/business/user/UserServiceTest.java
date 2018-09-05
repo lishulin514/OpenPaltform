@@ -1,7 +1,7 @@
 package com.telezone.business.user;
 
 import com.telezone.OpenApiApplication;
-import com.telezone.business.user.pojo.IPUser;
+import com.telezone.business.demo.pojo.IPUser;
 import com.telezone.business.user.service.IPUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
