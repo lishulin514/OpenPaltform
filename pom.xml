@@ -6,13 +6,8 @@
 
     <groupId>com.telezone</groupId>
     <artifactId>OpenPaltform</artifactId>
-    <packaging>pom</packaging>
+    <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>OpenApi</module>
-        <module>common</module>
-        <module>OpenApiService</module>
-    </modules>
     <name>OpenPaltform</name>
     <description>开放平台接口demo</description>
     <parent>
@@ -27,15 +22,11 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <jackson.datatype.jsr310>2.8.9</jackson.datatype.jsr310>
-        <mybatis.typehandlers.jsr310>1.0.2</mybatis.typehandlers.jsr310>
         <jackson.databind>2.8.11.1</jackson.databind>
         <commons.lang3>3.7</commons.lang3>
         <fastjson>1.2.49</fastjson>
         <netty.all>5.0.0.Alpha2</netty.all>
         <mssql.jdbc>6.4.0.jre8</mssql.jdbc>
-        <mybatis.spring.boot.starter>1.3.1</mybatis.spring.boot.starter>
-        <mapper.spring.boot.starter>2.0.2</mapper.spring.boot.starter>
-        <pagehelper.spring.boot.starter>1.1.0</pagehelper.spring.boot.starter>
         <hibernate.entitymanager>4.3.6.Final</hibernate.entitymanager>
     </properties>
 
@@ -67,11 +58,6 @@
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
             <version>${jackson.datatype.jsr310}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis-typehandlers-jsr310</artifactId>
-            <version>${mybatis.typehandlers.jsr310}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -106,5 +92,15 @@
                     <version>1.5.10.RELEASE</version>
                 </dependency>-->
     </dependencies>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.telezone.OpenApiApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
